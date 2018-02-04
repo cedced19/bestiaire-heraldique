@@ -1,28 +1,16 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import MapView from 'react-native-maps';
+import { StackNavigator } from 'react-navigation';
+import MainScreen from './app/screens/main.js';
+import WalkingScreen from './app/screens/walking.js';
 
-export default class App extends React.Component {
-  render() {
-    return (
-        <MapView
-          style={styles.map}
-          initialRegion={{
-            latitude: 48.740569,
-            longitude: 7.26325,
-            latitudeDelta: 0.013585,
-            longitudeDelta: 0.026264,
-          }}
-        />
-    );
+export default App = StackNavigator({
+  Main: {screen: MainScreen},
+  Walking: {screen: WalkingScreen}
+}, {
+  navigationOptions: {
+   headerStyle:  {
+     backgroundColor: '#335fe1'
+   },
+   headerTintColor: 'white'
   }
-}
-
-const styles = StyleSheet.create({
-  map: {
-    height: 400,
-    width: 400,
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-  },
 });
