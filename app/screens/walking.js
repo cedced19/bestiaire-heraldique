@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import MapView, { Polyline } from 'react-native-maps';
+import { StyleSheet, View, Text } from 'react-native';
+import MapView, { Polyline, Marker } from 'react-native-maps';
 import BackgroundGeolocation from 'react-native-mauron85-background-geolocation';
 import LocationServicesDialogBox from 'react-native-android-location-services-dialog-box';
 
@@ -8,7 +8,9 @@ export default class WalkingScreen extends React.Component {
    constructor(props) {
     super(props);
     this.state = {
-      userLocation: {}
+      userLocation: {},
+      markers: [],
+      itinerary: []
     };
    }
 
@@ -46,6 +48,9 @@ export default class WalkingScreen extends React.Component {
      }).catch((error) => {
        navigate('Main');
      });
+     const markers=require('../markers.json');
+     const itinerary=require('../itinerary.json');
+     this.setState({markers, itinerary})
   }
 
   componentWillUnmount() {
@@ -71,19 +76,22 @@ export default class WalkingScreen extends React.Component {
             longitudeDelta: 0.02,
           }}
           showsCompass={true}
-          minZoomLevel={13.75}
+          minZoomLevel={14}
           showsMyLocationButton={true}
           showsUserLocation={true}
           mapType={'terrain'}>
-          /*<Polyline
-        		coordinates={[
-        			{ latitude: 48.743092, longitude: 7.257349 },
-        			{ latitude: 48.742328, longitude: 7.256577 },
-        			{ latitude: 48.741422, longitude: 7.256148 }
-        		]}
+          <Polyline
+        		coordinates={this.state.itinerary}
         		strokeColor='#000'
         		strokeWidth={3}
-        	/>*/
+        	/>
+          {this.state.markers.map(marker => (
+            <Marker
+              coordinate={marker.coords}
+              title={marker.title}
+              key={marker.title}
+            />
+          ))}
         </MapView>
     );
   }

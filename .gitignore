@@ -1,7 +1,7 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # api
-android/app/src/main/res/values/string.xml
+android/app/src/main/res/values/strings.xml
 
 # dependencies
 /node_modules
