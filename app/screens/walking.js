@@ -66,6 +66,7 @@ export default class WalkingScreen extends React.Component {
   };
 
   render() {
+    const { navigate } = this.props.navigation;
     return (
         <MapView
           style={{ ...StyleSheet.absoluteFillObject, left:0, right: 0, top:0, bottom: 0, position: 'absolute' }}
@@ -87,6 +88,8 @@ export default class WalkingScreen extends React.Component {
         	/>
           {this.state.markers.map(marker => (
             <Marker
+              onCalloutPress={() => navigate('AboutMarker', marker)}
+              description={'🎧'}
               coordinate={marker.coords}
               title={marker.title}
               key={marker.title}
