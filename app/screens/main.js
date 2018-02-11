@@ -15,6 +15,15 @@ export default class MainScreen extends React.Component {
       backgroundColor: '#335fe1'
     }
   };
+
+  componentDidMount () {
+    // use go back function
+    if (global.playing) {
+      global.player.pause();
+      global.playing = false;
+    }
+  }
+
   render() {
     const { navigate } = this.props.navigation;
     return (
