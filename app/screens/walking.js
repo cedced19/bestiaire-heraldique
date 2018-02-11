@@ -69,6 +69,10 @@ export default class WalkingScreen extends React.Component {
     BackgroundGeolocation.stop();
     clearInterval(this.interval);
     allowStateUpdate = false;
+    if (global.playing) {
+      global.player.pause();
+      global.playing = false;
+    }
   }
 
   _toggleAudio () {
