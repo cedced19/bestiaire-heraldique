@@ -28,8 +28,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new RNSoundPackage(),
-            new LocationServicesDialogBoxPackage(),
+          new RNSoundPackage(),
+          new LocationServicesDialogBoxPackage(),
           new BackgroundGeolocationPackage(),
           new MapsPackage()
       );

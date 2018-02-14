@@ -282,6 +282,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/repos/bestiaire-heraldique/android/app/build/intermediates/exploded-aar/bestiaireheraldique/react-native-vector-icons/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ee92e255dcd813c08213aad584450af5dbd00326">
+        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/bestiaireheraldique-react-native-vector-icons-unspecified_97d3b03d42d16d1f26781ea7979db396d751719e.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/repos/bestiaire-heraldique/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.6/jars/classes.jar"
         jumboMode="false"
         optimize="true"

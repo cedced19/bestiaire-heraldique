@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { AppState } from 'react-native';
+import { AppState, StatusBar } from 'react-native';
 
 import { Container, Content, Card, CardItem, Text, Body, Button, H1, Grid, Row, Icon, Alert } from 'native-base';
 
@@ -111,6 +111,7 @@ export default class AboutMarker extends Component {
   render() {
     return (
       <Container>
+                <StatusBar backgroundColor={'#335fe1'} />
                 <Content>
                     <Card style={{ flex: 0 }}>
                           <CardItem>
@@ -119,11 +120,11 @@ export default class AboutMarker extends Component {
                                   <H1>Explications audio</H1>
                                 </Row>
                                 <Row>
-                                {(this.state.playing) ?  (
-                                  <Button onPress={()=>this._toggleAudio()} iconRight>
+                                  {(this.state.playing) ?  (
+                                    <Button onPress={()=>this._toggleAudio()} iconRight>
                                       <Text>Pause </Text>
                                       <Icon name='pause' />
-                                  </Button>
+                                    </Button>
                                   ) : (
                                     <Button onPress={()=>this._toggleAudio()} iconRight>
                                       <Text>Play </Text>

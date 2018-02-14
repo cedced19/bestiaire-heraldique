@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, AppState } from 'react-native';
+import { StyleSheet, View, Text, AppState, StatusBar } from 'react-native';
 import { Button, Icon } from 'native-base';
 import MapView, { Polyline, Marker } from 'react-native-maps';
 import BackgroundGeolocation from 'react-native-mauron85-background-geolocation';
@@ -119,6 +119,7 @@ export default class WalkingScreen extends React.Component {
     const { navigate } = this.props.navigation;
     return (
         <View style={styles.container}>
+          <StatusBar backgroundColor={'#335fe1'} />
           <MapView
             style={styles.map}
             initialRegion={{
