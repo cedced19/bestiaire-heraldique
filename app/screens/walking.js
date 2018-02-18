@@ -15,6 +15,7 @@ export default class WalkingScreen extends React.Component {
       markers: [],
       itinerary: []
     };
+    this._centerMap = this._centerMap.bind(this);
    }
 
    componentDidMount () {
@@ -101,6 +102,24 @@ export default class WalkingScreen extends React.Component {
       }
   }
 
+  _centerMap () {
+    this.refs.map.fitToCoordinates(
+      [
+        {
+          latitude: 48.746399,
+          longitude: 7.251178
+        },
+        {
+          latitude: 48.734144,
+          longitude: 7.28212
+        }
+      ], {
+      edgePadding: { top: 10, right: 10, bottom: 10, left: 10 },
+      animated: true,
+    }
+    );
+  }
+
   _handleAppStateChange (currentAppState) {
     if(currentAppState == 'background' && global.playing) {
         global.player.pause();
@@ -132,7 +151,8 @@ export default class WalkingScreen extends React.Component {
             minZoomLevel={14}
             showsMyLocationButton={true}
             showsUserLocation={true}
-            mapType={'terrain'}>
+            mapType={'terrain'}
+            ref='map'>
             <Polyline
           		coordinates={this.state.itinerary}
           		strokeColor='#000'
@@ -141,7 +161,6 @@ export default class WalkingScreen extends React.Component {
             {this.state.markers.map(marker => (
               <Marker
                 onCalloutPress={() => navigate('AboutMarker', marker)}
-                description={'🎧'}
                 coordinate={marker.coords}
                 title={marker.title}
                 key={marker.title}
@@ -151,16 +170,19 @@ export default class WalkingScreen extends React.Component {
           {(this.state.player) ?  (
             <View>
             {(this.state.playing) ?  (
-              <Button onPress={()=>this._toggleAudio()} style={styles.button}>
+              <Button onPress={()=>this._toggleAudio()} style={styles.button_audio}>
                 <Icon name='pause' />
               </Button>
             ) : (
-              <Button onPress={()=>this._toggleAudio()} style={styles.button}>
+              <Button onPress={()=>this._toggleAudio()} style={styles.button_audio}>
                 <Icon name='play' />
               </Button>
             )}
             </View>
           ) : null}
+          <Button style={styles.button_map} onPress={()=>this._centerMap()}>
+            <Text style={{color: '#fff'}}>Recentrer</Text>
+          </Button>
         </View>
     );
   }
@@ -183,12 +205,22 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
   },
-  button: {
+  button_audio: {
     position: 'absolute',
     right: 10,
     bottom: 10,
     marginRight: 0,
     marginLeft: 0,
+    zIndex: 10
+  },
+  button_map: {
+    position: 'absolute',
+    left: 10,
+    bottom: 10,
+    marginRight: 0,
+    marginLeft: 0,
+    paddingLeft: 10,
+    paddingRight: 10,
     zIndex: 10
   }
 });
