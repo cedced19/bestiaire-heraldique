@@ -23,48 +23,48 @@ export default class AboutMarker extends Component {
     this._handleAppStateChange = this._handleAppStateChange.bind(this);
   }
 
-  componentWillMount () {
+  componentWillMount() {
     allowStateUpdate = true;
     if (global.currentMusic == this.props.navigation.state.params.sound) {
-      this.setState({playing: global.playing});
+      this.setState({ playing: global.playing });
     }
   }
 
-  componentDidMount () {
+  componentDidMount() {
     AppState.addEventListener('change', this._handleAppStateChange);
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     allowStateUpdate = false;
     AppState.removeEventListener('change', this._handleAppStateChange);
   }
 
-  _toggleAudio () {
+  _toggleAudio() {
     if (this.state.playing) {
       global.player.pause();
-      this.setState({playing: false});
+      this.setState({ playing: false });
       global.playing = false;
     } else {
       if (global.currentMusic == this.props.navigation.state.params.sound && !global.playing && global.player) {
-          this.setState({playing: true});
-          global.playing = true;
-          global.player.play((success) => {
-              global.player.release();
-              global.player = false;
-              global.playing = false;
-              if (allowStateUpdate) this.setState({playing: false});
+        this.setState({ playing: true });
+        global.playing = true;
+        global.player.play((success) => {
+          global.player.release();
+          global.player = false;
+          global.playing = false;
+          if (allowStateUpdate) this.setState({ playing: false });
 
-              if (!success) {
-                global.currentMusic = false;
-                return Alert.alert(
-                    'Erreur',
-                    'Une erreur a eu lieu lors de la lecture du fichier audio.',
-                    [{text: 'Ok'}]
-                );
-              }
-          });
+          if (!success) {
+            global.currentMusic = false;
+            return Alert.alert(
+              'Erreur',
+              'Une erreur a eu lieu lors de la lecture du fichier audio.',
+              [{ text: 'Ok' }]
+            );
+          }
+        });
       } else {
-        if(global.playing) {
+        if (global.playing) {
           global.player.pause();
           global.player.release();
           global.player = false;
@@ -77,74 +77,74 @@ export default class AboutMarker extends Component {
             global.currentMusic = false;
             global.playing = false;
             return Alert.alert(
-                'Erreur',
-                'Une erreur a eu lieu lors de la lecture du fichier audio.',
-                [{text: 'Ok'}]
+              'Erreur',
+              'Une erreur a eu lieu lors de la lecture du fichier audio.',
+              [{ text: 'Ok' }]
             );
           }
           this.setState({ duration: Math.floor(global.player.getDuration()), playing: true });
           global.playing = true;
           global.player.play((success) => {
-              global.player.release();
+            global.player.release();
+            global.player = false;
+            global.playing = false;
+            if (allowStateUpdate) this.setState({ playing: false });
+
+            if (!success) {
               global.player = false;
               global.playing = false;
-              if (allowStateUpdate) this.setState({playing: false});
-
-              if (!success) {
-                global.player = false;
-                global.playing = false;
-                global.currentMusic = false;
-                return Alert.alert(
-                    'Erreur',
-                    'Une erreur a eu lieu lors de la lecture du fichier audio.',
-                    [{text: 'Ok'}]
-                )
-              }
+              global.currentMusic = false;
+              return Alert.alert(
+                'Erreur',
+                'Une erreur a eu lieu lors de la lecture du fichier audio.',
+                [{ text: 'Ok' }]
+              )
+            }
           });
         });
       }
     }
   }
 
-  _handleAppStateChange (currentAppState) {
-    if(currentAppState == 'background' && global.playing) {
-        global.player.pause();
-        global.playing = false;
+  _handleAppStateChange(currentAppState) {
+    if (currentAppState == 'background' && global.playing) {
+      global.player.pause();
+      global.playing = false;
     }
-    if(currentAppState == 'active' && global.currentMusic == this.props.navigation.state.params.sound) {
-        this.setState({playing: global.playing});
+    if (currentAppState == 'active' && global.currentMusic == this.props.navigation.state.params.sound) {
+      this.setState({ playing: global.playing });
     }
   }
 
   render() {
     return (
       <Container>
-                <StatusBar backgroundColor={'#335fe1'} />
-                <KeepAwake />
-                <Content>
-                    <Card style={{ flex: 0 }}>
-                          <CardItem>
-                              <Grid>
-                                <Row>
-                                  <H1>Explications audio</H1>
-                                </Row>
-                                <Row>
-                                  {(this.state.playing) ?  (
-                                    <Button onPress={()=>this._toggleAudio()} iconRight>
-                                      <Text>Pause </Text>
-                                      <Icon name='pause' />
-                                    </Button>
-                                  ) : (
-                                    <Button onPress={()=>this._toggleAudio()} iconRight>
-                                      <Text>Play </Text>
-                                      <Icon name='play' />
-                                    </Button>
-                                  )}
-                                </Row>
-                              </Grid>
-                          </CardItem>
-                     </Card>
-                 </Content>
+        <StatusBar backgroundColor={'#335fe1'} />
+        <KeepAwake />
+        <Content>
+          <Card style={{ flex: 0 }}>
+            <CardItem>
+              <Grid>
+                <Row>
+                  <H1>Explications audio</H1>
+                </Row>
+                <Row>
+                  {(this.state.playing) ? (
+                    <Button onPress={() => this._toggleAudio()} iconRight>
+                      <Text>Pause </Text>
+                      <Icon name='pause' />
+                    </Button>
+                  ) : (
+                      <Button onPress={() => this._toggleAudio()} iconRight>
+                        <Text>Play </Text>
+                        <Icon name='play' />
+                      </Button>
+                    )}
+                </Row>
+              </Grid>
+            </CardItem>
+          </Card>
+        </Content>
       </Container>
     );
   }

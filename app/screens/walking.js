@@ -9,7 +9,7 @@ import KeepAwake from 'react-native-keep-awake';
 let allowStateUpdate = true;
 
 export default class WalkingScreen extends React.Component {
-   constructor(props) {
+  constructor(props) {
     super(props);
     this.state = {
       userLocation: {},
@@ -17,53 +17,53 @@ export default class WalkingScreen extends React.Component {
       itinerary: []
     };
     this._centerMap = this._centerMap.bind(this);
-   }
+  }
 
-   componentDidMount () {
-     AppState.addEventListener('change', this._handleAppStateChange);
-     this.interval = setInterval(() => {
-       if (allowStateUpdate) this.setState({playing: global.playing, player: global.player});
-     }, 1000);
-   }
+  componentDidMount() {
+    AppState.addEventListener('change', this._handleAppStateChange);
+    this.interval = setInterval(() => {
+      if (allowStateUpdate) this.setState({ playing: global.playing, player: global.player });
+    }, 1000);
+  }
 
-   componentWillMount () {
+  componentWillMount() {
     allowStateUpdate = true
     const { navigate } = this.props.navigation;
     LocationServicesDialogBox.checkLocationServicesIsEnabled({
-       message: 'Vous devez activer la localisation pour que l\'application fonctionne.',
-       ok: 'D\'accord',
-       cancel: 'Annuler'
-     }).then((success) => {
-       BackgroundGeolocation.configure({
-         desiredAccuracy: 0,
-         stationaryRadius: 10,
-         distanceFilter: 10,
-         locationTimeout: 30,
-         notificationTitle: 'Bestiaire héraldique',
-         notificationText: 'Balade en cours...',
-         startOnBoot: false,
-         stopOnTerminate: false,
-         locationProvider: BackgroundGeolocation.provider.ANDROID_ACTIVITY_PROVIDER,
-         interval: 5000,
-         fastestInterval: 2500,
-         activitiesInterval: 5000,
-         stopOnStillActivity: false,
-         notificationIconLarge: 'icon_location',
-         notificationIconSmall: 'icon_location'
-       });
-       BackgroundGeolocation.on('location', (data) => {
-         if (this.refs.walking) {
-           let userLocation = { longitude: data.longitude, latitude: data.latitude };
-           this.setState({ userLocation });
-         }
-       });
-       BackgroundGeolocation.start();
-     }).catch((error) => {
-       navigate('Main');
-     });
-     const markers=require('../markers.json');
-     const itinerary=require('../itinerary.json');
-     this.setState({markers, itinerary})
+      message: 'Vous devez activer la localisation pour que l\'application fonctionne.',
+      ok: 'D\'accord',
+      cancel: 'Annuler'
+    }).then((success) => {
+      BackgroundGeolocation.configure({
+        desiredAccuracy: 0,
+        stationaryRadius: 10,
+        distanceFilter: 10,
+        locationTimeout: 30,
+        notificationTitle: 'Bestiaire héraldique',
+        notificationText: 'Balade en cours...',
+        startOnBoot: false,
+        stopOnTerminate: false,
+        locationProvider: BackgroundGeolocation.provider.ANDROID_ACTIVITY_PROVIDER,
+        interval: 5000,
+        fastestInterval: 2500,
+        activitiesInterval: 5000,
+        stopOnStillActivity: false,
+        notificationIconLarge: 'icon_location',
+        notificationIconSmall: 'icon_location'
+      });
+      BackgroundGeolocation.on('location', (data) => {
+        if (this.refs.walking) {
+          let userLocation = { longitude: data.longitude, latitude: data.latitude };
+          this.setState({ userLocation });
+        }
+      });
+      BackgroundGeolocation.start();
+    }).catch((error) => {
+      navigate('Main');
+    });
+    const markers = require('../markers.json');
+    const itinerary = require('../itinerary.json');
+    this.setState({ markers, itinerary })
   }
 
   componentWillUnmount() {
@@ -77,33 +77,33 @@ export default class WalkingScreen extends React.Component {
     }
   }
 
-  _toggleAudio () {
+  _toggleAudio() {
     if (this.state.playing) {
       global.player.pause();
-      if (allowStateUpdate) this.setState({playing: false});
+      if (allowStateUpdate) this.setState({ playing: false });
       global.playing = false;
     } else {
-        if (allowStateUpdate) this.setState({playing: true});
-        global.playing = true;
-        global.player.play((success) => {
-            global.player.release();
-            global.player = false;
-            global.playing = false;
-            if (allowStateUpdate) this.setState({playing: false});
+      if (allowStateUpdate) this.setState({ playing: true });
+      global.playing = true;
+      global.player.play((success) => {
+        global.player.release();
+        global.player = false;
+        global.playing = false;
+        if (allowStateUpdate) this.setState({ playing: false });
 
-            if (!success) {
-                global.currentMusic = false;
-                return Alert.alert(
-                    'Erreur',
-                    'Une erreur a eu lieu lors de la lecture du fichier audio.',
-                    [{text: 'Ok'}]
-                );
-              }
-        });
-      }
+        if (!success) {
+          global.currentMusic = false;
+          return Alert.alert(
+            'Erreur',
+            'Une erreur a eu lieu lors de la lecture du fichier audio.',
+            [{ text: 'Ok' }]
+          );
+        }
+      });
+    }
   }
 
-  _centerMap () {
+  _centerMap() {
     this.refs.map.fitToCoordinates(
       [
         {
@@ -115,16 +115,16 @@ export default class WalkingScreen extends React.Component {
           longitude: 7.28212
         }
       ], {
-      edgePadding: { top: 10, right: 10, bottom: 10, left: 10 },
-      animated: true,
-    }
+        edgePadding: { top: 10, right: 10, bottom: 10, left: 10 },
+        animated: true,
+      }
     );
   }
 
-  _handleAppStateChange (currentAppState) {
-    if(currentAppState == 'background' && global.playing) {
-        global.player.pause();
-        global.playing = false;
+  _handleAppStateChange(currentAppState) {
+    if (currentAppState == 'background' && global.playing) {
+      global.player.pause();
+      global.playing = false;
     }
   }
 
@@ -138,54 +138,54 @@ export default class WalkingScreen extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-        <View style={styles.container}>
-          <StatusBar backgroundColor={'#335fe1'} />
-          <KeepAwake />
-          <MapView
-            style={styles.map}
-            initialRegion={{
-              latitude: 48.741644,
-              longitude: 7.264838,
-              latitudeDelta: 0.02,
-              longitudeDelta: 0.02,
-            }}
-            showsCompass={true}
-            minZoomLevel={14}
-            showsMyLocationButton={true}
-            showsUserLocation={true}
-            mapType={'terrain'}
-            ref='map'>
-            <Polyline
-          		coordinates={this.state.itinerary}
-          		strokeColor='#000'
-          		strokeWidth={3}
-          	/>
-            {this.state.markers.map(marker => (
-              <Marker
-                onCalloutPress={() => navigate('AboutMarker', marker)}
-                coordinate={marker.coords}
-                title={marker.title}
-                key={marker.title}
-              />
-            ))}
-          </MapView>
-          {(this.state.player) ?  (
-            <View>
-            {(this.state.playing) ?  (
-              <Button onPress={()=>this._toggleAudio()} style={styles.button_audio}>
+      <View style={styles.container}>
+        <StatusBar backgroundColor={'#335fe1'} />
+        <KeepAwake />
+        <MapView
+          style={styles.map}
+          initialRegion={{
+            latitude: 48.741644,
+            longitude: 7.264838,
+            latitudeDelta: 0.02,
+            longitudeDelta: 0.02,
+          }}
+          showsCompass={true}
+          minZoomLevel={14}
+          showsMyLocationButton={true}
+          showsUserLocation={true}
+          mapType={'terrain'}
+          ref='map'>
+          <Polyline
+            coordinates={this.state.itinerary}
+            strokeColor='#000'
+            strokeWidth={3}
+          />
+          {this.state.markers.map(marker => (
+            <Marker
+              onCalloutPress={() => navigate('AboutMarker', marker)}
+              coordinate={marker.coords}
+              title={marker.title}
+              key={marker.title}
+            />
+          ))}
+        </MapView>
+        {(this.state.player) ? (
+          <View>
+            {(this.state.playing) ? (
+              <Button onPress={() => this._toggleAudio()} style={styles.button_audio}>
                 <Icon name='pause' />
               </Button>
             ) : (
-              <Button onPress={()=>this._toggleAudio()} style={styles.button_audio}>
-                <Icon name='play' />
-              </Button>
-            )}
-            </View>
-          ) : null}
-          <Button style={styles.button_map} onPress={()=>this._centerMap()}>
-            <Text style={{color: '#fff'}}>Recentrer</Text>
-          </Button>
-        </View>
+                <Button onPress={() => this._toggleAudio()} style={styles.button_audio}>
+                  <Icon name='play' />
+                </Button>
+              )}
+          </View>
+        ) : null}
+        <Button style={styles.button_map} onPress={() => this._centerMap()}>
+          <Text style={{ color: '#fff' }}>Recentrer</Text>
+        </Button>
+      </View>
     );
   }
 }
