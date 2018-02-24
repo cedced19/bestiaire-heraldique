@@ -6,5 +6,13 @@
     },
     "title": "Point de départ",
     "sound": "intro.mp3"
+  },
+  {
+    "coords": {
+      "latitude": 48.742157,
+      "longitude": 7.256769
+    },
+    "title": "Ours",
+    "sound": "ours.mp3"
   }
 ]

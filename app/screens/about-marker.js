@@ -63,11 +63,18 @@ export default class AboutMarker extends Component {
               }
           });
       } else {
+        if(global.playing) {
+          global.player.pause();
+          global.player.release();
+          global.player = false;
+          global.playing = false;
+        }
         global.currentMusic = this.props.navigation.state.params.sound;
         global.player = new Sound(this.props.navigation.state.params.sound, Sound.MAIN_BUNDLE, (error) => {
           if (error) {
             global.player = false;
             global.currentMusic = false;
+            global.playing = false;
             return Alert.alert(
                 'Erreur',
                 'Une erreur a eu lieu lors de la lecture du fichier audio.',
