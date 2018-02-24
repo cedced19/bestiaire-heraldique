@@ -12,6 +12,7 @@ import com.facebook.soloader.SoLoader;
 
 import com.airbnb.android.react.maps.MapsPackage;
 import com.marianhello.react.BackgroundGeolocationPackage;
+import com.corbt.keepawake.KCKeepAwakePackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -31,7 +32,8 @@ public class MainApplication extends Application implements ReactApplication {
           new RNSoundPackage(),
           new LocationServicesDialogBoxPackage(),
           new BackgroundGeolocationPackage(),
-          new MapsPackage()
+          new MapsPackage(),
+          new KCKeepAwakePackage()
       );
     }
 

@@ -4,6 +4,7 @@ import { Button, Icon } from 'native-base';
 import MapView, { Polyline, Marker } from 'react-native-maps';
 import BackgroundGeolocation from 'react-native-mauron85-background-geolocation';
 import LocationServicesDialogBox from 'react-native-android-location-services-dialog-box';
+import KeepAwake from 'react-native-keep-awake';
 
 let allowStateUpdate = true;
 
@@ -139,6 +140,7 @@ export default class WalkingScreen extends React.Component {
     return (
         <View style={styles.container}>
           <StatusBar backgroundColor={'#335fe1'} />
+          <KeepAwake />
           <MapView
             style={styles.map}
             initialRegion={{

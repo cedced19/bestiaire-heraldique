@@ -5,6 +5,7 @@ import { AppState, StatusBar } from 'react-native';
 import { Container, Content, Card, CardItem, Text, Body, Button, H1, Grid, Row, Icon, Alert } from 'native-base';
 
 import Sound from 'react-native-sound';
+import KeepAwake from 'react-native-keep-awake';
 
 let allowStateUpdate = true;
 
@@ -119,6 +120,7 @@ export default class AboutMarker extends Component {
     return (
       <Container>
                 <StatusBar backgroundColor={'#335fe1'} />
+                <KeepAwake />
                 <Content>
                     <Card style={{ flex: 0 }}>
                           <CardItem>

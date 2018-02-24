@@ -30,6 +30,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/repos/bestiaire-heraldique/android/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="2e92aa0163544a804a0b34f169ca61801770839a">
+        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-26.0.0-alpha1_76a934464cfae9a72c32ff0f0fff473d1b08a8d6.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/cjung/.gradle/caches/modules-2/files-2.1/com.github.tony19/logback-android-core/1.1.1-6/93117015ae639e6482e4e1ad5f988c3f61d09fe0/logback-android-core-1.1.1-6.jar"
         jumboMode="false"
         optimize="true"
@@ -45,150 +54,6 @@
         revision="23.0.1"
         sha1="900a290779cdb4eb2e63b6f7806fd9f30ce4f60d">
         <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-10.2.6_9942e82b5a4717d8f8e4a93decdbc9f8b5356f01.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/usr/local/share/android-sdk-linux/extras/android/m2repository/com/android/support/support-annotations/26.0.0-alpha1/support-annotations-26.0.0-alpha1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="023ee503b631f69511e335a061ea008f8da60f40">
-        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/support-annotations-26.0.0-alpha1_1341820167fee94d8a50eab1299a2e80e1a20265.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/repos/bestiaire-heraldique/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.52.0/jars/libs/infer-annotations-4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
-        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/infer-annotations-4.0_12066480b4e4971db18b9ef70033956e189981e1.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/repos/bestiaire-heraldique/android/app/build/intermediates/exploded-aar/bestiaireheraldique/react-native-android-location-services-dialog-box/unspecified/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="a1a87f78eb0ceabe57c84ef4b1310c1146aa064d">
-        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/bestiaireheraldique-react-native-android-location-services-dialog-box-unspecified_d7011bd3ab081cbbfabb3372ecc32af61cdac60d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/repos/bestiaire-heraldique/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/1.3.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="c65a2e39d54023bac3aef64a2f0cff89289c7ff6">
-        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-drawee-1.3.0_ee34c3d80ad50b4cd49e78287fbc40c75b91b44d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/repos/bestiaire-heraldique/android/app/build/intermediates/exploded-aar/com.android.support/support-compat/26.0.0-alpha1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
-        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-26.0.0-alpha1_e31d4e45f115867d4dc2420f27be7b69531c5641.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/repos/bestiaire-heraldique/android/app/build/intermediates/exploded-aar/bestiaireheraldique/react-native-sound/unspecified/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="7e90fdfad6bc87a88d3fe5d7955ae94b4844dec5">
-        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/bestiaireheraldique-react-native-sound-unspecified_62fee37bdeb22c3849390c8d7cb3f7c8bf35035e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/cjung/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_c955e34246917ba7904f63a400b645ad8108849b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/cjung/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="6975da39a7040257bd51d21a231b76c915872d38">
-        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_10303584251dba0eafc9f039137905a7acecc3df.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/repos/bestiaire-heraldique/android/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/26.0.0-alpha1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="9935891f23923f39d002087085d9696568a9f657">
-        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-26.0.0-alpha1_be1736e943b9d8e6e9f663e58cb049e74352d1b3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/cjung/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
-        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/staticlayout-proxy-1.0_1ca052fc4fff80e4fec15f1b15ccfdb9e6497bcb.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/cjung/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
-        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0_4f555b876dab8e4d801925b4431778201dd7218f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/repos/bestiaire-heraldique/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.6/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="3f0a85e6000998ac322ddd50750e8cf91601a84b">
-        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-10.2.6_fc6db636edc9474dac4a8d3b6793d82a823027ce.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/repos/bestiaire-heraldique/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/26.0.0-alpha1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-26.0.0-alpha1_fb6b378c6495bf1abfdb6e7082d8bd162938e983.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/cjung/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.13.0/a9283170b7305c8d92d25aff02a6ab7e45d06cbe/okio-1.13.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
-        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/okio-1.13.0_2597ad907e290892fa974797cfcace44508b44ec.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/cjung/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.6.0/3f9b16b774f2c36cfd86dd2053d0b3059531dacc/okhttp-urlconnection-3.6.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
-        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.6.0_e8d357a8140569e7c7c4fc75f7cc642f1b49a7a6.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/repos/bestiaire-heraldique/android/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/26.0.0-alpha1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="2e92aa0163544a804a0b34f169ca61801770839a">
-        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-26.0.0-alpha1_76a934464cfae9a72c32ff0f0fff473d1b08a8d6.jar" />
     </item>
     <item
         is-multidex="false"
@@ -210,12 +75,30 @@
     </item>
     <item
         is-multidex="false"
+        jar="/usr/local/share/android-sdk-linux/extras/android/m2repository/com/android/support/support-annotations/26.0.0-alpha1/support-annotations-26.0.0-alpha1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="023ee503b631f69511e335a061ea008f8da60f40">
+        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/support-annotations-26.0.0-alpha1_1341820167fee94d8a50eab1299a2e80e1a20265.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/cjung/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.21/139535a69a4239db087de9bab0bee568bf8e0b70/slf4j-api-1.7.21.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="139535a69a4239db087de9bab0bee568bf8e0b70">
         <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/slf4j-api-1.7.21_c17106f0293435096d085ceb77886f8eab15f68f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/repos/bestiaire-heraldique/android/app/build/intermediates/exploded-aar/bestiaireheraldique/react-native-keep-awake/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6311cef20d780875bca41874037d26dc352548f6">
+        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/bestiaireheraldique-react-native-keep-awake-unspecified_46c6f690e3e634dcc97f8bbaf6d7cc9c9db2ff6e.jar" />
     </item>
     <item
         is-multidex="false"
@@ -255,6 +138,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/repos/bestiaire-heraldique/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.52.0/jars/libs/infer-annotations-4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/infer-annotations-4.0_12066480b4e4971db18b9ef70033956e189981e1.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/repos/bestiaire-heraldique/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -273,12 +165,57 @@
     </item>
     <item
         is-multidex="false"
+        jar="/repos/bestiaire-heraldique/android/app/build/intermediates/exploded-aar/bestiaireheraldique/react-native-android-location-services-dialog-box/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="a1a87f78eb0ceabe57c84ef4b1310c1146aa064d">
+        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/bestiaireheraldique-react-native-android-location-services-dialog-box-unspecified_d7011bd3ab081cbbfabb3372ecc32af61cdac60d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/repos/bestiaire-heraldique/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c65a2e39d54023bac3aef64a2f0cff89289c7ff6">
+        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-drawee-1.3.0_ee34c3d80ad50b4cd49e78287fbc40c75b91b44d.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/repos/bestiaire-heraldique/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
         <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.0.1_9d8ddd2515da2861c25572eadf6f87140a13eb1f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/repos/bestiaire-heraldique/android/app/build/intermediates/exploded-aar/com.android.support/support-compat/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
+        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-26.0.0-alpha1_e31d4e45f115867d4dc2420f27be7b69531c5641.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/repos/bestiaire-heraldique/android/app/build/intermediates/exploded-aar/bestiaireheraldique/react-native-sound/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="7e90fdfad6bc87a88d3fe5d7955ae94b4844dec5">
+        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/bestiaireheraldique-react-native-sound-unspecified_62fee37bdeb22c3849390c8d7cb3f7c8bf35035e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cjung/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_c955e34246917ba7904f63a400b645ad8108849b.jar" />
     </item>
     <item
         is-multidex="false"
@@ -291,12 +228,39 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/cjung/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_10303584251dba0eafc9f039137905a7acecc3df.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/repos/bestiaire-heraldique/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.2.6/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="69e74a8b1cbf5b8ee0fc0cca6bab1ac6c45efef8">
         <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tasks-10.2.6_7531253b5d0b6ae703ba8abf0fe973eec88982ca.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/repos/bestiaire-heraldique/android/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="9935891f23923f39d002087085d9696568a9f657">
+        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-26.0.0-alpha1_be1736e943b9d8e6e9f663e58cb049e74352d1b3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cjung/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
+        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/staticlayout-proxy-1.0_1ca052fc4fff80e4fec15f1b15ccfdb9e6497bcb.jar" />
     </item>
     <item
         is-multidex="false"
@@ -318,6 +282,33 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/cjung/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0_4f555b876dab8e4d801925b4431778201dd7218f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/repos/bestiaire-heraldique/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.6/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="3f0a85e6000998ac322ddd50750e8cf91601a84b">
+        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-10.2.6_fc6db636edc9474dac4a8d3b6793d82a823027ce.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/repos/bestiaire-heraldique/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/26.0.0-alpha1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-26.0.0-alpha1_fb6b378c6495bf1abfdb6e7082d8bd162938e983.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/repos/bestiaire-heraldique/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/1.3.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -333,6 +324,24 @@
         revision="23.0.1"
         sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
         <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_3ee0c2163676c7490c10c209f56d3443824fb642.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cjung/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.13.0/a9283170b7305c8d92d25aff02a6ab7e45d06cbe/okio-1.13.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
+        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/okio-1.13.0_2597ad907e290892fa974797cfcace44508b44ec.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/cjung/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.6.0/3f9b16b774f2c36cfd86dd2053d0b3059531dacc/okhttp-urlconnection-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
+        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.6.0_e8d357a8140569e7c7c4fc75f7cc642f1b49a7a6.jar" />
     </item>
     <item
         is-multidex="false"
