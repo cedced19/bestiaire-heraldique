@@ -44,7 +44,7 @@ export default class MainScreen extends React.Component {
               </Button>
             </Row>
             <Row style={styles.row}>
-              <Button style={{backgroundColor: '#335fe1'}} iconRight>
+              <Button onPress={()=>navigate('Tutorial')} style={{backgroundColor: '#335fe1'}} iconRight>
                 <Text>Tutoriel</Text>
                 <Icon name='ios-book-outline' />
               </Button>

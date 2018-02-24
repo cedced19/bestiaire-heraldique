@@ -255,6 +255,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/repos/bestiaire-heraldique/android/app/build/intermediates/exploded-aar/com.facebook.fresco/animated-gif/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="5f79b1232c817718a764464331f75b7c6b0b4da2">
+        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-animated-gif-1.3.0_dad6e2175d71b25d978a9fc68f26d7b7b5c32614.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/cjung/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
         jumboMode="false"
         optimize="true"
@@ -351,6 +360,15 @@
         revision="23.0.1"
         sha1="614c66c9ece69eef48c65a8558de4fd7266d9f69">
         <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/logback-android-classic-1.1.1-6_a1b5d6025ec466bdbb58d13990740c5ee98a1ba0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/repos/bestiaire-heraldique/android/app/build/intermediates/exploded-aar/com.facebook.fresco/animated-base/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ff997c37654bead6c259c0b124d52bdc944f5bff">
+        <dex dex="/repos/bestiaire-heraldique/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-animated-base-1.3.0_b78ebe8bb6b006fac16b0b9b32ebb65dac28cce4.jar" />
     </item>
 
 </items>
