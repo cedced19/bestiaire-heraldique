@@ -17,6 +17,8 @@ export default class WalkingScreen extends React.Component {
       itinerary: []
     };
     this._centerMap = this._centerMap.bind(this);
+    this._nextMarker = this._nextMarker.bind(this);
+    this._prevMarker = this._prevMarker.bind(this);
   }
 
   componentDidMount() {
@@ -121,6 +123,38 @@ export default class WalkingScreen extends React.Component {
     );
   }
 
+  _nextMarker() {
+    for (var k in this.state.markers) {
+      this.refs[this.state.markers[k].title].hideCallout();
+    }
+    if (typeof (this.currentMarker) == 'undefined') {
+      this.currentMarker = 0;
+    } else {
+      if (this.currentMarker>=this.state.markers.length-1) {
+        this.currentMarker=0;
+      } else {
+        this.currentMarker++;
+      }
+    }
+    this.refs[this.state.markers[this.currentMarker].title].showCallout();
+  };
+
+  _prevMarker() {
+    for (var k in this.state.markers) {
+      this.refs[this.state.markers[k].title].hideCallout();
+    }
+    if (typeof (this.currentMarker) == 'undefined') {
+      this.currentMarker = 0;
+    } else {
+      if (this.currentMarker==0) {
+        this.currentMarker=this.state.markers.length-1;
+      } else {
+        this.currentMarker--;
+      }
+    }
+    this.refs[this.state.markers[this.currentMarker].title].showCallout();
+  };
+
   _handleAppStateChange(currentAppState) {
     if (currentAppState == 'background' && global.playing) {
       global.player.pause();
@@ -165,10 +199,17 @@ export default class WalkingScreen extends React.Component {
               onCalloutPress={() => navigate('AboutMarker', marker)}
               coordinate={marker.coords}
               title={marker.title}
+              ref={marker.title}
               key={marker.title}
             />
           ))}
         </MapView>
+        <Button style={styles.button_next} onPress={() => this._nextMarker()}>
+            <Icon name='ios-arrow-forward-outline' />
+        </Button>
+        <Button style={styles.button_prev} onPress={() => this._prevMarker()}>
+            <Icon name='ios-arrow-back' />
+        </Button>
         {(this.state.player) ? (
           <View>
             {(this.state.playing) ? (
@@ -219,6 +260,26 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left: 10,
     bottom: 10,
+    marginRight: 0,
+    marginLeft: 0,
+    paddingLeft: 10,
+    paddingRight: 10,
+    zIndex: 10
+  },
+  button_next: {
+    position: 'absolute',
+    right: 10,
+    top: 10,
+    marginRight: 0,
+    marginLeft: 0,
+    paddingLeft: 10,
+    paddingRight: 10,
+    zIndex: 10
+  },
+  button_prev: {
+    position: 'absolute',
+    left: 10,
+    top: 10,
     marginRight: 0,
     marginLeft: 0,
     paddingLeft: 10,

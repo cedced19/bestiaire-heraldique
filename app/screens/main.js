@@ -16,7 +16,7 @@ export default class MainScreen extends React.Component {
   };
 
 
-  openMap () {
+  openMap() {
     Linking.canOpenURL('http://maps.google.com/maps?daddr=48.743448,7.258147').then(supported => {
       if (supported) {
         Linking.openURL('http://maps.google.com/maps?daddr=48.743448,7.258147');
@@ -28,37 +28,43 @@ export default class MainScreen extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <Container style={styles.container}>
-       <StatusBar backgroundColor={'#335fe1'} />
-       <Content>
-         <Text style={styles.welcome}>
-           Les bestiaires de Découverto: {'\n'} bestiaire héraldique
+        <StatusBar backgroundColor={'#335fe1'} />
+        <Content>
+          <Text style={styles.welcome}>
+            Les bestiaires de Découverto: {'\n'} bestiaire héraldique
          </Text>
-         <Text style={styles.instructions}>
-           Suivez le circuit.
-         </Text>
-         <Grid style={styles.center}>
+          <Grid style={styles.center}>
             <Row style={styles.row}>
-              <Button onPress={this.openMap} style={{backgroundColor: '#335fe1'}} iconRight>
+              <Text style={styles.instructions}>
+                Suivez le circuit, si vous ne savez pas comment utiliser l'application voyez consulter le tutoriel.
+              </Text>
+            </Row>
+            <Row style={styles.row}>
+              <Button onPress={this.openMap} style={{ backgroundColor: '#335fe1' }} iconRight>
                 <Text>Aller au point de départ</Text>
                 <Icon name='map' />
               </Button>
             </Row>
             <Row style={styles.row}>
-              <Button onPress={()=>navigate('Tutorial')} style={{backgroundColor: '#335fe1'}} iconRight>
+              <Button onPress={() => navigate('Tutorial')} style={{ backgroundColor: '#335fe1' }} iconRight>
                 <Text>Tutoriel</Text>
                 <Icon name='ios-book-outline' />
               </Button>
             </Row>
-        </Grid>
-
-       </Content>
-       <Footer style={{backgroundColor: '#F5FCFF'}}>
-         <Button onPress={()=>navigate('Walking')} style={{backgroundColor: '#e74c3c'}} iconRight>
-           <Text>Démarrer</Text>
-           <Icon name='ios-arrow-forward-outline' />
-         </Button>
-       </Footer>
-     </Container>
+            <Row style={styles.row}>
+              <Text style={styles.instructions}>
+                Ayez à l'esprit que vous vous promenez dans la nature. 
+              </Text>
+            </Row>
+          </Grid>
+        </Content>
+        <Footer style={{ backgroundColor: '#F5FCFF' }}>
+          <Button onPress={() => navigate('Walking')} style={{ backgroundColor: '#e74c3c' }} iconRight>
+            <Text>Démarrer</Text>
+            <Icon name='ios-arrow-forward-outline' />
+          </Button>
+        </Footer>
+      </Container>
     );
   }
 }
@@ -77,8 +83,8 @@ const styles = StyleSheet.create({
   },
   instructions: {
     color: '#333333',
-    marginLeft: 8,
-    marginRight: 8,
+    marginLeft: 16,
+    marginRight: 16,
     marginBottom: 5,
   },
   center: {
