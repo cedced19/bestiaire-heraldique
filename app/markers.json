@@ -14,5 +14,13 @@
     },
     "title": "Ours",
     "sound": "ours.mp3"
+  },
+  {
+    "coords": {
+      "latitude": 48.737779,
+      "longitude": 7.256248
+    },
+    "title": "Lion",
+    "sound": "lion.mp3"
   }
 ]
