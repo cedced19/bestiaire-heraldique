@@ -10,6 +10,7 @@ import getExtremums from 'get-extremums';
 
 let allowStateUpdate = true;
 let currentNotification = false;
+let isForeground = true;
 
 function distanceBtwPoint(position, reference) {
   var R = 6378.137;
@@ -88,12 +89,15 @@ export default class WalkingScreen extends React.Component {
         if (nearest.d <= 15) {
           if (currentNotification != nearest.title) {
             PushNotification.cancelAllLocalNotifications();
-            PushNotification.localNotification({
+            var opts = {
               bigText: 'Nouvel extrait audio à écouter: ' + nearest.title,
               title: 'Nouvel extrait audio',
-              message: nearest.title,
-              actions: '["Écoutez l\'extrait"]', 
-            });
+              message: nearest.title
+            };
+            if (isForeground) {
+              opts.actions = '["Écoutez l\'extrait"]';
+            }
+            PushNotification.localNotification(opts);
             currentNotification = nearest.title;
           }
         } else {
@@ -207,9 +211,14 @@ export default class WalkingScreen extends React.Component {
   };
 
   _handleAppStateChange(currentAppState) {
-    if (currentAppState == 'background' && global.playing) {
-      global.player.pause();
-      global.playing = false;
+    if (currentAppState == 'background') {
+      isForeground = false;
+      if (global.playing) {
+        global.player.pause();
+        global.playing = false;
+      }
+    } else {
+      isForeground = true;
     }
   }
 
