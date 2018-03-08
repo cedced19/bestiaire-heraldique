@@ -1,13 +1,15 @@
 import React from 'react';
-import { StyleSheet, View, Text, AppState, StatusBar } from 'react-native';
+import { StyleSheet, View, Text, AppState, StatusBar, DeviceEventEmitter } from 'react-native';
 import { Button, Icon } from 'native-base';
 import MapView, { Polyline, Marker } from 'react-native-maps';
 import BackgroundGeolocation from 'react-native-mauron85-background-geolocation';
 import LocationServicesDialogBox from 'react-native-android-location-services-dialog-box';
 import KeepAwake from 'react-native-keep-awake';
+import PushNotification from 'react-native-push-notification';
 import getExtremums from 'get-extremums';
 
 let allowStateUpdate = true;
+let currentNotification = false;
 
 function distanceBtwPoint(position, reference) {
   var R = 6378.137;
@@ -42,7 +44,11 @@ export default class WalkingScreen extends React.Component {
   }
 
   componentWillMount() {
-    allowStateUpdate = true
+    allowStateUpdate = true;
+    currentNotification = false;
+    const markers = require('../markers.json');
+    const itinerary = require('../itinerary.json');
+    this.setState({ markers, itinerary });
     const { navigate } = this.props.navigation;
     LocationServicesDialogBox.checkLocationServicesIsEnabled({
       message: 'Vous devez activer la localisation pour que l\'application fonctionne.',
@@ -71,7 +77,7 @@ export default class WalkingScreen extends React.Component {
           let userLocation = { longitude: data.longitude, latitude: data.latitude };
           this.setState({ userLocation });
         }
-        var list = []
+        var list = [];
         this.state.markers.forEach((marker) => {
           list.push({
             d: distanceBtwPoint(data,marker.coords),
@@ -79,15 +85,38 @@ export default class WalkingScreen extends React.Component {
           });
         });
         var nearest = getExtremums(list, 'd').lowest;
-        
+        if (nearest.d <= 15) {
+          if (currentNotification != nearest.title) {
+            PushNotification.cancelAllLocalNotifications();
+            PushNotification.localNotification({
+              bigText: 'Nouvel extrait audio à écouter: ' + nearest.title,
+              title: 'Nouvel extrait audio',
+              message: nearest.title,
+              actions: '["Écoutez l\'extrait"]', 
+            });
+            currentNotification = nearest.title;
+          }
+        } else {
+          PushNotification.cancelAllLocalNotifications();
+          currentNotification = false;
+        }
       });
       BackgroundGeolocation.start();
     }).catch((error) => {
       navigate('Main');
     });
-    const markers = require('../markers.json');
-    const itinerary = require('../itinerary.json');
-    this.setState({ markers, itinerary })
+    PushNotification.registerNotificationActions(['Écoutez l\'extrait']);
+    DeviceEventEmitter.addListener('notificationActionReceived', function(action){
+      const info = JSON.parse(action.dataJSON);
+      if (info.action == 'Écoutez l\'extrait') {
+        for (var k in markers) {
+          if (currentNotification == markers[k].title) {
+            return navigate('AboutMarker', markers[k]);
+          }
+        }
+      }
+    });
+    
   }
 
   componentWillUnmount() {
