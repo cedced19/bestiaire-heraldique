@@ -5,8 +5,21 @@ import MapView, { Polyline, Marker } from 'react-native-maps';
 import BackgroundGeolocation from 'react-native-mauron85-background-geolocation';
 import LocationServicesDialogBox from 'react-native-android-location-services-dialog-box';
 import KeepAwake from 'react-native-keep-awake';
+import getExtremums from 'get-extremums';
 
 let allowStateUpdate = true;
+
+function distanceBtwPoint(position, reference) {
+  var R = 6378.137;
+  var dLat = reference.latitude * Math.PI / 180 - position.latitude * Math.PI / 180;
+  var dLon = reference.longitude * Math.PI / 180 - position.longitude * Math.PI / 180;
+  var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+  Math.cos(position.latitude * Math.PI / 180) * Math.cos(reference.latitude * Math.PI / 180) *
+  Math.sin(dLon/2) * Math.sin(dLon/2);
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  var d = R * c;
+  return Math.floor(d * 1000);
+}
 
 export default class WalkingScreen extends React.Component {
   constructor(props) {
@@ -58,6 +71,15 @@ export default class WalkingScreen extends React.Component {
           let userLocation = { longitude: data.longitude, latitude: data.latitude };
           this.setState({ userLocation });
         }
+        var list = []
+        this.state.markers.forEach((marker) => {
+          list.push({
+            d: distanceBtwPoint(data,marker.coords),
+            title: marker.title
+          });
+        });
+        var nearest = getExtremums(list, 'd').lowest;
+        
       });
       BackgroundGeolocation.start();
     }).catch((error) => {
