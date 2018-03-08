@@ -9,18 +9,26 @@
   },
   {
     "coords": {
-      "latitude": 48.742157,
-      "longitude": 7.256769
+      "latitude": 48.73746,
+      "longitude": 7.25548
+    },
+    "title": "Lion",
+    "sound": "lion.mp3"
+  },
+  {
+    "coords": {
+      "latitude": 48.73799,
+      "longitude": 7.25795
     },
     "title": "Ours",
     "sound": "ours.mp3"
   },
   {
     "coords": {
-      "latitude": 48.737779,
-      "longitude": 7.256248
+      "latitude": 48.74046,
+      "longitude": 7.26829
     },
-    "title": "Lion",
-    "sound": "lion.mp3"
+    "title": "Coq",
+    "sound": "coq.mp3"
   }
 ]
