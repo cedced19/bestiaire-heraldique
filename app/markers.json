@@ -30,5 +30,13 @@
     },
     "title": "Coq",
     "sound": "coq.mp3"
+  },
+  {
+    "coords": {
+      "latitude": 48.74242,
+      "longitude": 7.26889
+    },
+    "title": "Cerf",
+    "sound": "cerf.mp3"
   }
 ]
