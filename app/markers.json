@@ -33,6 +33,14 @@
   },
   {
     "coords": {
+      "latitude": 48.73771,
+      "longitude": 7.27947
+    },
+    "title": "Corbeau",
+    "sound": "corbeau.mp3"
+  },
+  {
+    "coords": {
       "latitude": 48.74242,
       "longitude": 7.26889
     },
