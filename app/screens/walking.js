@@ -192,6 +192,7 @@ export default class WalkingScreen extends React.Component {
       }
     }
     this.refs[this.state.markers[this.currentMarker].title].showCallout();
+    this.refs.map.animateToCoordinate(this.state.markers[this.currentMarker].coords);
   };
 
   _prevMarker() {
@@ -208,6 +209,7 @@ export default class WalkingScreen extends React.Component {
       }
     }
     this.refs[this.state.markers[this.currentMarker].title].showCallout();
+    this.refs.map.animateToCoordinate(this.state.markers[this.currentMarker].coords);
   };
 
   _handleAppStateChange(currentAppState) {
