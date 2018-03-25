@@ -26,7 +26,20 @@
       "longitude": 7.25795
     },
     "title": "Ours",
-    "sound": "ours.mp3"
+    "sound": "ours.mp3",
+    "images": [{
+      "uri": "ours_3",
+      "width": 732,
+      "height": 1093
+    }, {
+      "uri": "ours_2",
+      "width": 976,
+      "height": 1056
+    }, {
+      "uri": "ours",
+      "width": 975,
+      "height": 1136
+    }]
   },
   {
     "coords": {
@@ -34,7 +47,16 @@
       "longitude": 7.26829
     },
     "title": "Coq",
-    "sound": "coq.mp3"
+    "sound": "coq.mp3",
+    "images": [{
+      "uri": "coq",
+      "width": 817,
+      "height": 964
+    }, {
+      "uri": "coq_2",
+      "width": 840,
+      "height": 907
+    }]
   },
   {
     "coords": {
@@ -42,7 +64,20 @@
       "longitude": 7.27947
     },
     "title": "Corbeau",
-    "sound": "corbeau.mp3"
+    "sound": "corbeau.mp3",
+    "images": [{
+      "uri": "corbeau",
+      "width": 828,
+      "height": 1156
+    }, {
+      "uri": "corbeau_2",
+      "width": 484,
+      "height": 808
+    }, {
+      "uri": "corbeau_3",
+      "width": 743,
+      "height": 949
+    }]
   },
   {
     "coords": {
@@ -50,6 +85,11 @@
       "longitude": 7.26889
     },
     "title": "Cerf",
-    "sound": "cerf.mp3"
+    "sound": "cerf.mp3",
+    "images": [{
+      "uri": "cerf",
+      "width": 687,
+      "height": 1130
+    }]
   }
 ]
