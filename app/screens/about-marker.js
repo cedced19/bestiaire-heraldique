@@ -1,13 +1,25 @@
 import React, { Component } from 'react';
 
-import { AppState, StatusBar } from 'react-native';
+import { AppState, StatusBar, Dimensions } from 'react-native';
 
 import { Container, Content, Card, CardItem, Text, Body, Button, H1, Grid, Row, Icon, Alert } from 'native-base';
 
 import Sound from 'react-native-sound';
 import KeepAwake from 'react-native-keep-awake';
+import ResponsiveImage from 'react-native-responsive-image';
 
 let allowStateUpdate = true;
+
+function makeid() {
+  var text = '';
+  var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+  for (var i = 0; i < 5; i++)
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+  return text;
+}
+
 
 export default class AboutMarker extends Component {
   static navigationOptions = ({ navigation }) => ({
@@ -117,6 +129,18 @@ export default class AboutMarker extends Component {
   }
 
   render() {
+    const listImages = this.props.navigation.state.params.images.map(image => {
+      var { width } = Dimensions.get('window');
+      var height = (width * image.height) / image.width;
+    
+      return (<Card key={makeid()}>
+        <CardItem>
+          <Body>
+            <ResponsiveImage  source={{uri: image.uri, isStatic: true }} initHeight={height} initWidth={width} />
+          </Body>
+        </CardItem>
+      </Card>)
+    });
     return (
       <Container>
         <StatusBar backgroundColor={'#335fe1'} />
@@ -144,6 +168,7 @@ export default class AboutMarker extends Component {
               </Grid>
             </CardItem>
           </Card>
+          {listImages}
         </Content>
       </Container>
     );

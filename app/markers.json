@@ -13,7 +13,12 @@
       "longitude": 7.25548
     },
     "title": "Lion",
-    "sound": "lion.mp3"
+    "sound": "lion.mp3",
+    "images": [{
+      "uri": "lion",
+      "width": 677,
+      "height": 437
+    }]
   },
   {
     "coords": {

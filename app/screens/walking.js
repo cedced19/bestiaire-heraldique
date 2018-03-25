@@ -248,6 +248,7 @@ export default class WalkingScreen extends React.Component {
           showsMyLocationButton={true}
           showsUserLocation={true}
           mapType={'terrain'}
+          loadingEnabled={true}
           ref='map'>
           <Polyline
             coordinates={this.state.itinerary}
