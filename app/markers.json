@@ -67,8 +67,8 @@
     "sound": "corbeau.mp3",
     "images": [{
       "uri": "corbeau",
-      "width": 828,
-      "height": 1156
+      "width": 645,
+      "height": 1052
     }, {
       "uri": "corbeau_2",
       "width": 484,
