@@ -129,7 +129,7 @@ export default class AboutMarker extends Component {
   }
 
   render() {
-    const listImages = this.props.navigation.state.params.images.map(image => {
+    const listImages = (this.props.navigation.state.params.images || []).map(image => {
       var { width } = Dimensions.get('window');
       var height = (width * image.height) / image.width;
     
