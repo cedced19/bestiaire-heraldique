@@ -58,8 +58,8 @@ export default class WalkingScreen extends React.Component {
     }).then((success) => {
       BackgroundGeolocation.configure({
         desiredAccuracy: 0,
-        stationaryRadius: 10,
-        distanceFilter: 10,
+        stationaryRadius: 5,
+        distanceFilter: 5,
         locationTimeout: 30,
         notificationTitle: 'Bestiaire héraldique',
         notificationText: 'Balade en cours...',
@@ -86,7 +86,7 @@ export default class WalkingScreen extends React.Component {
           });
         });
         var nearest = getExtremums(list, 'd').lowest;
-        if (nearest.d <= 15) {
+        if (nearest.d <= 20) {
           if (currentNotification != nearest.title) {
             PushNotification.cancelAllLocalNotifications();
             var opts = {
