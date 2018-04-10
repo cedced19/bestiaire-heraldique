@@ -36,7 +36,7 @@ export default class MainScreen extends React.Component {
           <Grid style={styles.center}>
             <Row style={styles.row}>
               <Text style={styles.instructions}>
-                Suivez le circuit, si vous ne savez pas comment utiliser l'application voyez consulter le tutoriel.
+                Suivez le circuit, si vous ne savez pas comment utiliser l'application veuillez consulter le tutoriel.
               </Text>
             </Row>
             <Row style={styles.row}>
