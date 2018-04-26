@@ -51,12 +51,10 @@ export default class MainScreen extends React.Component {
                 <Icon name='ios-book-outline' />
               </Button>
             </Row>
-            <Row style={styles.row}>
-              <Text style={styles.instructions}>
-                Ayez à l'esprit que vous vous promenez dans la nature. 
-              </Text>
-            </Row>
           </Grid>
+          <Text style={styles.instructions}>La distance du parcours est de <Text style={{ fontWeight: 'bold' }}>5 km</Text>.{'\n'}</Text>
+          <Text style={styles.instructions}>La marche est considérée comme un sport par conséquent assurez-vous d'avoir les conditions physiques nécessaires pour pouvoir la pratiquer.{'\n'}</Text>
+          <Text style={styles.instructions}>Nous vous rappelons que cette application pour smartphone peut à tout moment être victime d'une panne ou d'une déficience technique. Vous ne devez par conséquent pas avoir une foi aveugle en elle et nous vous conseillons de toujours vous munir d'une carte lorsque vous allez en forêt.{'\n'}</Text>
         </Content>
         <Footer style={{ backgroundColor: '#F5FCFF' }}>
           <Button onPress={() => navigate('Walking')} style={{ backgroundColor: '#e74c3c' }} iconRight>
@@ -71,9 +69,6 @@ export default class MainScreen extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
   welcome: {
@@ -83,9 +78,8 @@ const styles = StyleSheet.create({
   },
   instructions: {
     color: '#333333',
-    marginLeft: 16,
-    marginRight: 16,
-    marginBottom: 5,
+    marginLeft: 8,
+    marginRight: 8
   },
   center: {
     flex: 1,
